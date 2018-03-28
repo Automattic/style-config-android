@@ -21,7 +21,7 @@ publish {
     groupId = 'com.automattic.android'
     uploadName = 'fetchstyle'
     description = 'Gradle plugin for fetching shared Android style configs'
-    publishVersion = "1.0"
+    publishVersion = "1.1"
     licences = ['GPL-2.0']
     website = 'https://github.com/Automattic/style-config-android'
     dryRun = 'false'
