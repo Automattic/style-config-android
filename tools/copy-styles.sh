@@ -19,5 +19,8 @@ cp $1/.idea/encodings.xml $CONFIG_DIR/idea/encodings.xml
 cp $1/.idea/externalDependencies.xml $CONFIG_DIR/idea/externalDependencies.xml
 cp $1/.idea/vcs.xml $CONFIG_DIR/idea/vcs.xml
 
+cp $1/.idea/codeStyles/codeStyleConfig.xml $CONFIG_DIR/idea/codeStyles/codeStyleConfig.xml
+cp $1/.idea/codeStyles/Project.xml $CONFIG_DIR/idea/codeStyles/Project.xml
+
 cp $1/.idea/inspectionProfiles/Project_Default.xml $CONFIG_DIR/idea/inspectionProfiles/Project_Default.xml
 cp $1/.idea/inspectionProfiles/profiles_settings.xml $CONFIG_DIR/idea/inspectionProfiles/profiles_settings.xml
