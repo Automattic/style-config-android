@@ -9,7 +9,7 @@ In your root build.gradle:
 ```groovy
 buildscript {
     dependencies {
-        classpath 'com.automattic.android:fetchstyle:1.0'
+        classpath 'com.automattic.android:fetchstyle:1.1'
     }
 }
 

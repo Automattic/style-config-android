@@ -11,6 +11,7 @@ class FetchStylePlugin implements Plugin<Project> {
             dependsOn 'downloadCheckstyleConfig'
             dependsOn 'downloadEditorConfig'
             dependsOn 'downloadIDEAConfig'
+            dependsOn 'downloadIDEACodeStyleConfig'
             dependsOn 'downloadIDEAInspectionConfig'
         }
 
@@ -34,6 +35,13 @@ class FetchStylePlugin implements Plugin<Project> {
                     'idea/encodings.xml',
                     'idea/externalDependencies.xml',
                     'idea/vcs.xml'])
+        }
+
+        project.task('downloadIDEACodeStyleConfig', type: DownloadTask) {
+            target = new File('.idea/codeStyles')
+            urls = formatUrls([
+                    'idea/codeStyles/codeStyleConfig.xml',
+                    'idea/codeStyles/Project.xml'])
         }
 
         project.task('downloadIDEAInspectionConfig', type: DownloadTask) {
