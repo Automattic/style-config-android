@@ -11,7 +11,7 @@
     <!-- Excludes given file patterns from scan.              -->
     <!-- See http://checkstyle.sf.net/config_filefilters.html -->
     <module name="BeforeExecutionExclusionFileFilter">
-        <property name="fileNamePattern" value="[/\\]gen[/\\]"/>
+        <property name="fileNamePattern" value="[/\\]gen[/\\]|[/\\]node_modules[/\\]|[/\\]react-native-aztec[/\\]"/>
     </module>
 
     <!-- Checks whether files end with a new line.                        -->
@@ -106,6 +106,14 @@
       <property name="format" value=".*dotorg(?!.*checkstyle ignore)"/>
       <property name="ignoreCase" value="true"/>
       <property name="message" value="You should not use _dotorg_, use _selfHosted_ instead"/>
+      <property name="severity" value="error"/>
+    </module>
+
+    <!-- Specific to WordPress -->
+    <module name="RegexpSingleline">
+      <property name="format" value=" Snackbar\.make(?!.*checkstyle ignore)"/>
+      <property name="ignoreCase" value="true"/>
+      <property name="message" value="You should not use Snackbar directly, use WPSnackbar instead"/>
       <property name="severity" value="error"/>
     </module>
 
