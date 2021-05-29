@@ -1,8 +1,6 @@
-group = "com.automattic.android"
-
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
         maven { url 'https://a8c-libs.s3.amazonaws.com/android' }
     }
     dependencies {
@@ -10,12 +8,21 @@ buildscript {
     }
 }
 
-apply plugin: 'groovy'
+plugins {
+    id 'groovy'
+}
+
 apply plugin: 'com.automattic.android.publish-plugin-to-s3'
 
-dependencies {
-    implementation localGroovy()
-    implementation gradleApi()
+group = "com.automattic.android"
+
+gradlePlugin {
+    plugins {
+        fetchstyle {
+            id = 'com.automattic.android.fetchstyle'
+            implementationClass = 'com.automattic.android.fetchstyle.FetchStylePlugin'
+        }
+    }
 }
 
 s3PublishPlugin {

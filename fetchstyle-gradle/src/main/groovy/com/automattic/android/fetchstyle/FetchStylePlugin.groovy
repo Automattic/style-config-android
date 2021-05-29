@@ -6,6 +6,7 @@ import org.gradle.api.Project
 class FetchStylePlugin implements Plugin<Project> {
     private static final BASE_URL = "https://raw.githubusercontent.com/Automattic/style-config-android/develop/config/"
 
+    @Override
     void apply(Project project) {
         project.task('downloadConfigs') {
             dependsOn 'downloadCheckstyleConfig'
