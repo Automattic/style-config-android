@@ -1,29 +1,23 @@
 buildscript {
     repositories {
         jcenter()
+        maven { url 'https://a8c-libs.s3.amazonaws.com/android' }
     }
     dependencies {
-        classpath 'com.novoda:bintray-release:0.5.0'
+        classpath 'com.automattic.android:publish-to-s3:0.4.0'
     }
 }
 
 apply plugin: 'groovy'
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.automattic.android.publish-plugin-to-s3'
 
 dependencies {
     compile localGroovy()
     compile gradleApi()
 }
 
-publish {
-    artifactId = 'fetchstyle'
-    userOrg = 'automattic'
-    groupId = 'com.automattic.android'
-    uploadName = 'fetchstyle'
-    description = 'Gradle plugin for fetching shared Android style configs'
-    publishVersion = "1.1"
-    licences = ['GPL-2.0']
-    website = 'https://github.com/Automattic/style-config-android'
-    dryRun = 'false'
-    autoPublish = 'true'
+s3PublishPlugin {
+    groupId "com.automattic.android"
+    artifactId "fetchstyle"
 }
+
