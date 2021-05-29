@@ -12,8 +12,8 @@ apply plugin: 'groovy'
 apply plugin: 'com.automattic.android.publish-plugin-to-s3'
 
 dependencies {
-    compile localGroovy()
-    compile gradleApi()
+    implementation localGroovy()
+    implementation gradleApi()
 }
 
 s3PublishPlugin {
